@@ -1,5 +1,6 @@
 import React from 'react';
 import '@/assets/styles/globals.css';
+import Navbar from '@/components/Navbar';
 
 export const metadata = {
   title: 'DuoHome | Find the perfect rental',
@@ -11,7 +12,8 @@ const MainLayout = ({ children }) => {
   return (
     <html lang='en'>
       <body>
-        <div>{children}</div>
+        <Navbar></Navbar>
+        <main>{children}</main>
       </body>
     </html>
   );
