@@ -1,6 +1,7 @@
 import React from 'react';
 import '@/assets/styles/globals.css';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'DuoHome | Find the perfect rental',
@@ -14,6 +15,7 @@ const MainLayout = ({ children }) => {
       <body>
         <Navbar></Navbar>
         <main>{children}</main>
+        <Footer></Footer>
       </body>
     </html>
   );
