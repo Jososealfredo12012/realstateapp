@@ -4,7 +4,7 @@ const PropertySchema = new Schema(
   {
     owner: {
       type: Schema.Types.ObjectId,
-      ref: 'Property',
+      ref: 'User',
       required: true,
     },
     name: {
@@ -46,7 +46,7 @@ const PropertySchema = new Schema(
     },
     amenities: [
       {
-        type: Strign,
+        type: String,
       },
     ],
     rates: {
@@ -86,6 +86,6 @@ const PropertySchema = new Schema(
   }
 );
 
-const Property = models.Property || model('Property', PropertySchema);
+const Property = models.Property || model('properties', PropertySchema);
 
 export default Property;
