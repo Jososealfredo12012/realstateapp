@@ -47,14 +47,14 @@ const PropertyEditForm = () => {
         const propertyData = await fetchProperty(id);
 
         // Check rates for null, if so then make empty string
-        if(propertyData && propertyData.rates){
-            const defaultRates = {...propertyData.rates}
-            for(const rate in defaultRates){
-                if(defaultRates[rate] === null){
-                    defaultRates[rate] = ''
-                }
+        if (propertyData && propertyData.rates) {
+          const defaultRates = { ...propertyData.rates };
+          for (const rate in defaultRates) {
+            if (defaultRates[rate] === null) {
+              defaultRates[rate] = '';
             }
-            propertyData.rates = defaultRates
+          }
+          propertyData.rates = defaultRates;
         }
 
         setFields(propertyData);
@@ -116,7 +116,29 @@ const PropertyEditForm = () => {
     }));
   };
 
-  const handleSubmit = async () => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const formData = new FormData(e.target);
+
+      const res = await fetch(`/api/properties/${id}`, {
+        method: 'PUT',
+        body: formData,
+      });
+
+      if(res.status === 200){
+        router.push(`/properties/${id}`)
+      } else if(res.status === 401 || res.status === 403){
+        toast.error('Permission denied')
+      } else{
+        toast.error('Something went wrong')
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error('Something went wrong')
+    }
+  };
 
   return (
     mounted &&
