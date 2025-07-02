@@ -3,6 +3,7 @@ import '@/assets/styles/globals.css';
 import Navbar from '@/components/Navbar';
 import AuthProvider from '@/components/AuthProvider';
 import Footer from '@/components/Footer';
+import { ToastContainer } from 'react-toastify';
 
 export const metadata = {
   title: 'DuoHome | Find the perfect rental',
@@ -18,6 +19,7 @@ const MainLayout = ({ children }) => {
           <Navbar></Navbar>
           <main>{children}</main>
           <Footer></Footer>
+          <ToastContainer></ToastContainer>
         </body>
       </html>
     </AuthProvider>
