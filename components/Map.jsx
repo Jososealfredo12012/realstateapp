@@ -8,28 +8,39 @@ import Image from 'next/image';
 import pin from '@/assets/images/pin.svg';
 
 export default function Map({ property }) {
-  // console.log(process.env.NEXT_PUBLIC_MAPTILER_API_KEY);
-  console.log(process.env.MAPTILER_API_KEY);
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const RD = { lng: -69.9312, lat: 18.4861 };
   const zoom = 14;
+
   maptilersdk.config.apiKey = process.env.NEXT_PUBLIC_MAPTILER_API_KEY;
 
   useEffect(() => {
-    if (map.current) return; // stops map from intializing more than once
+    // Verificamos que haya latitud y longitud válidas
+    console.log(property);
+    if (
+      !property?.location?.latitud ||
+      !property?.location?.longitude
+    ) {
+      console.warn('No hay coordenadas disponibles para esta propiedad');
+      return;
+    }
 
-    map.current = new maptilersdk.Map({
-      container: mapContainer.current,
-      style: maptilersdk.MapStyle.STREETS,
-      center: [RD.lng, RD.lat],
-      zoom: zoom,
-    });
+    const lat = property.location.latitud;
+    const lng = property.location.longitude;
 
-    new maptilersdk.Marker({ color: '#FF0000' })
-      .setLngLat([-69.9312, 18.4861])
-      .addTo(map.current);
-  }, [RD.lng, RD.lat, zoom]);
+    if (!map.current) {
+      map.current = new maptilersdk.Map({
+        container: mapContainer.current,
+        style: maptilersdk.MapStyle.STREETS,
+        center: [lng, lat],
+        zoom: zoom,
+      });
+
+      new maptilersdk.Marker({ color: '#FF0000' })
+        .setLngLat([lng, lat])
+        .addTo(map.current);
+    }
+  }, [property]);
 
   return (
     <div className='map-wrap'>

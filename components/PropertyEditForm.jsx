@@ -19,6 +19,8 @@ const PropertyEditForm = () => {
       city: '',
       state: '',
       zipcode: '',
+      latitud: '',
+      longitude: '',
     },
     beds: '',
     baths: '',
@@ -127,16 +129,16 @@ const PropertyEditForm = () => {
         body: formData,
       });
 
-      if(res.status === 200){
-        router.push(`/properties/${id}`)
-      } else if(res.status === 401 || res.status === 403){
-        toast.error('Permission denied')
-      } else{
-        toast.error('Something went wrong')
+      if (res.status === 200) {
+        router.push(`/properties/${id}`);
+      } else if (res.status === 401 || res.status === 403) {
+        toast.error('Permission denied');
+      } else {
+        toast.error('Something went wrong');
       }
     } catch (error) {
       console.log(error);
-      toast.error('Something went wrong')
+      toast.error('Something went wrong');
     }
   };
 
@@ -237,6 +239,24 @@ const PropertyEditForm = () => {
             className='border rounded w-full py-2 px-3 mb-2'
             placeholder='Zipcode'
             value={fields.location.zipcode}
+            onChange={handleChange}
+          />
+          <input
+            type='text'
+            id='latitud'
+            name='location.latitud'
+            className='border rounded w-full py-2 px-3 mb-2'
+            placeholder='Latitud'
+            value={fields.location.latitud}
+            onChange={handleChange}
+          />
+          <input
+            type='text'
+            id='longitude'
+            name='location.longitude'
+            className='border rounded w-full py-2 px-3 mb-2'
+            placeholder='Longitude'
+            value={fields.location.longitude}
             onChange={handleChange}
           />
         </div>
