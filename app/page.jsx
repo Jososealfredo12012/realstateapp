@@ -4,6 +4,8 @@ import HomeProperties from '@/components/HomeProperties';
 import InfoBoxes from '@/components/InfoBoxes';
 import React from 'react';
 
+export const dynamic = 'force-dynamic';
+
 const HomePage = () => {
   return (
     <>
