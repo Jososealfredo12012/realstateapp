@@ -3,6 +3,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useGlobalContext } from '@/context/GlobalContext';
+import Link from 'next/link';
 
 const Message = ({ message }) => {
   const [isRead, setIsRead] = useState(message.read);
@@ -39,7 +40,7 @@ const Message = ({ message }) => {
 
       if (res.status === 200) {
         setIsDeleted(true);
-        setUnread((prevCount) => prevCount - 1)
+        setUnread((prevCount) => prevCount - 1);
         toast.success('Message Deleted');
       }
     } catch (error) {
@@ -51,6 +52,7 @@ const Message = ({ message }) => {
   if (isDeleted) {
     return null;
   }
+
   return (
     <div className='relative bg-white p-4 rounded-md shadow-md border border-gray-200'>
       {!isRead && (
@@ -82,6 +84,13 @@ const Message = ({ message }) => {
         <li>
           <strong>Received: </strong>{' '}
           {new Date(message.createdAt).toLocaleString()}
+        </li>
+        <li className='mt-2'>
+          <Link
+            className='h-[36px] bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-center text-sm'
+            href={`/properties/${message.property._id}`}>
+            Click Aqui para ver la propiedad
+          </Link>
         </li>
       </ul>
       <button
