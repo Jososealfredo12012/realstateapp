@@ -29,7 +29,8 @@ const Navbar = () => {
     setAuthProviders();
   }, []);
 
-  const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
+  const adminEmails = process.env.NEXT_PUBLIC_ADMIN_EMAILS?.split(',');
+  const isAdmin = adminEmails?.includes(profileEmail);
 
   return (
     <nav className='bg-blue-700 border-b border-blue-500'>
@@ -88,7 +89,7 @@ const Navbar = () => {
                   } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
                   Properties
                 </Link>
-                {profileEmail === adminEmail && (
+                {isAdmin && (
                   <Link
                     href='/properties/add'
                     className={`${
@@ -234,7 +235,7 @@ const Navbar = () => {
               } text-white block rounded-md px-3 py-2 text-base font-medium`}>
               Properties
             </Link>
-            {profileEmail === adminEmail && (
+            {isAdmin && (
               <Link
                 href='/properties/add'
                 className={`${
