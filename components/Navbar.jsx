@@ -29,6 +29,8 @@ const Navbar = () => {
     setAuthProviders();
   }, []);
 
+  const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
+
   return (
     <nav className='bg-blue-700 border-b border-blue-500'>
       <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
@@ -86,7 +88,7 @@ const Navbar = () => {
                   } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
                   Properties
                 </Link>
-                {profileEmail === 'josealfredo.066@gmail.com' && (
+                {profileEmail === adminEmail && (
                   <Link
                     href='/properties/add'
                     className={`${
@@ -232,7 +234,7 @@ const Navbar = () => {
               } text-white block rounded-md px-3 py-2 text-base font-medium`}>
               Properties
             </Link>
-            {profileEmail === 'josealfredo.066@gmail.com' && (
+            {profileEmail === adminEmail && (
               <Link
                 href='/properties/add'
                 className={`${
