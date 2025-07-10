@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import AuthProvider from '@/components/AuthProvider';
 import Footer from '@/components/Footer';
 import { ToastContainer } from 'react-toastify';
+import { GlobalProvider } from '@/context/GlobalContext';
 
 export const metadata = {
   title: 'DuoHome | Find the perfect rental',
@@ -13,16 +14,18 @@ export const metadata = {
 
 const MainLayout = ({ children }) => {
   return (
-    <AuthProvider>
-      <html lang='en'>
-        <body>
-          <Navbar></Navbar>
-          <main>{children}</main>
-          <Footer></Footer>
-          <ToastContainer></ToastContainer>
-        </body>
-      </html>
-    </AuthProvider>
+    <GlobalProvider>
+      <AuthProvider>
+        <html lang='en'>
+          <body>
+            <Navbar></Navbar>
+            <main>{children}</main>
+            <Footer></Footer>
+            <ToastContainer></ToastContainer>
+          </body>
+        </html>
+      </AuthProvider>
+    </GlobalProvider>
   );
 };
 

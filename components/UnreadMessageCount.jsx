@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useGlobalContext } from '@/context/GlobalContext';
 
 const UnreadMessageCount = ({ session }) => {
-  const [unread, setUnread] = useState(0);
+  const { unread, setUnread } = useGlobalContext();
 
   useEffect(() => {
     if (!session) return;
