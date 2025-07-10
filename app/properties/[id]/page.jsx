@@ -62,7 +62,7 @@ const PropertyPage = () => {
           </section>
           <section className='bg-blue-50'>
             <div className='container m-auto py-10 px-6'>
-              <div className='grid grid-cols-70-28 w-full gap-6'>
+              <div className='grid grid-cols-70-28 w-full gap-6 '>
                 {property && <PropertyDetails property={property} />}
 
                 {/* <!-- Sidebar --> */}
