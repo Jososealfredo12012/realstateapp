@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react';
 
 const PropertyAddForm = () => {
   const [mounted, setMounted] = useState(false);
@@ -102,9 +103,16 @@ const PropertyAddForm = () => {
       images: updatedImages,
     }));
   };
+  
+  const { data: session } = useSession();
+  const profileEmail = session?.user?.email;
+
+  const adminEmails = process.env.NEXT_PUBLIC_ADMIN_EMAILS?.split(',');
+  const isAdmin = adminEmails?.includes(profileEmail);
 
   return (
-    mounted && (
+    mounted &&
+    isAdmin && (
       <form
         action='/api/properties'
         method='POST'

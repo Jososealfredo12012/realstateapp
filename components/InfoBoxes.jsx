@@ -1,5 +1,6 @@
 import React from 'react';
 import InfoBox from './InfoBox';
+import InfoBoxOwners from './InfoBoxOwners';
 
 const InfoBoxes = () => {
   return (
@@ -7,27 +8,23 @@ const InfoBoxes = () => {
       <div className='container-xl lg:container m-auto'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg'>
           <InfoBox
-            heading={'For Renters'}
+            heading={'Para los interesados'}
             backgroundColor='bg-gray-100'
             buttonInfo={{
-              text: 'Browse Properties',
+              text: 'Buscar propiedades',
               link: '/properties',
               backgroundColor: 'bg-black',
             }}>
-            Find your dream rental property. Bookmark properties and contact
-            owners.
+            Encuentra tu propiead ideal y ponte en contacto con los dueños.
           </InfoBox>
-          <InfoBox
-            heading={'For Property Owners'}
+          <InfoBoxOwners
+            heading={'Para los dueños'}
             backgroundColor='bg-blue-100'
-            buttonInfo={{
-              text: 'add Property',
-              link: '/properties/add',
-              backgroundColor: 'bg-blue-500',
-            }}>
-            List your properties and reach potential tenants. Rent as an airbnb
-            or long term.
-          </InfoBox>
+            >
+            Si te interesa vender o alquilar tu propiedad, comunicate con nosotros:
+            <br></br>
+            849-248-3303
+          </InfoBoxOwners>
         </div>
       </div>
     </section>
