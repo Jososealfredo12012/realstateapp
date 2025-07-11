@@ -57,9 +57,9 @@ const SearchResultsPage = () => {
               <FaArrowAltCircleLeft className='mr-2 mb-1'></FaArrowAltCircleLeft>
               Ir a Propiedades
             </Link>
-            <h1 className='text-2xl mb-4'>Search Results</h1>
+            <h1 className='text-2xl mb-4'>Resultados de la busqueda</h1>
             {properties.length === 0 ? (
-              <p>No search results found</p>
+              <p>No hay resultados de la busqueda</p>
             ) : (
               <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                 {properties.map((property) => (
