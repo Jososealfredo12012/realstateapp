@@ -56,7 +56,7 @@ const PropertyPage = () => {
               <Link
                 href='/properties'
                 className='text-blue-500 hover:text-blue-600 flex items-center'>
-                <FaArrowLeft className='mr-2'></FaArrowLeft> Back to Properties
+                <FaArrowLeft className='mr-2'></FaArrowLeft> Ir a Propiedades
               </Link>
             </div>
           </section>

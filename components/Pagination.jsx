@@ -17,10 +17,10 @@ const Pagination = ({ page, pageSize, totalItems, onPageChange }) => {
         }`}
         disabled={page === 1}
         onClick={() => handlePageChange(page - 1)}>
-        Previous
+        Atras
       </button>
       <span className='mx-2'>
-        Page {page} of {totalPages}
+        Pagina {page} de {totalPages}
       </span>
       <button
         className={`ml-2 px-2 py-1 border border-gray-300 rounded ${
@@ -28,7 +28,7 @@ const Pagination = ({ page, pageSize, totalItems, onPageChange }) => {
         }`}
         disabled={page === totalPages}
         onClick={() => handlePageChange(page + 1)}>
-        Next
+        Siguiente
       </button>
     </section>
   );

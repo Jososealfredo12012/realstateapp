@@ -80,14 +80,14 @@ const Navbar = () => {
                   className={`${
                     pathName === '/' ? 'bg-black' : ''
                   } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
-                  Home
+                  Inicio
                 </Link>
                 <Link
                   href='/properties'
                   className={`${
                     pathName === '/properties' ? 'bg-black' : ''
                   } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
-                  Properties
+                  Propiedades
                 </Link>
                 {isAdmin && (
                   <Link
@@ -95,7 +95,7 @@ const Navbar = () => {
                     className={`${
                       pathName === '/properties/add' ? 'bg-black' : ''
                     } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
-                    Add Property
+                    Añadir propiedad
                   </Link>
                 )}
               </div>
@@ -185,7 +185,7 @@ const Navbar = () => {
                       onClick={() => {
                         setIsProfileMenuOpen(false);
                       }}>
-                      Your Profile
+                      Perfil
                     </Link>
                     <Link
                       href='/properties/saved'
@@ -196,7 +196,7 @@ const Navbar = () => {
                       onClick={() => {
                         setIsProfileMenuOpen(false);
                       }}>
-                      Saved Properties
+                      Propiedades guardadas
                     </Link>
                     <button
                       onClick={() => {
@@ -207,7 +207,7 @@ const Navbar = () => {
                       role='menuitem'
                       tabIndex='-1'
                       id='user-menu-item-2'>
-                      Sign Out
+                      Desconectarse
                     </button>
                   </div>
                 )}
@@ -226,7 +226,7 @@ const Navbar = () => {
               className={`${
                 pathName === '/' && 'bg-gray-900'
               } text-white block rounded-md px-3 py-2 text-base font-medium`}>
-              Home
+              Inicio
             </Link>
             <Link
               href='/properties'
@@ -241,7 +241,7 @@ const Navbar = () => {
                 className={`${
                   pathName === '/properties/add' ? 'bg-black' : ''
                 } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
-                Add Property
+                Añadir propiedad
               </Link>
             )}
             {!session &&

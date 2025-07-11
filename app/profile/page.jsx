@@ -76,7 +76,7 @@ const ProfilePage = () => {
     <section className='bg-blue-50'>
       <div className='container m-auto py-24'>
         <div className='bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0'>
-          <h1 className='text-3xl font-bold mb-4'>Your Profile</h1>
+          <h1 className='text-3xl font-bold mb-4'>Tu Perfil</h1>
           <div className='flex flex-col md:flex-row'>
             <div className='md:w-1/4 mx-20 mt-10'>
               <div className='mb-4'>
@@ -97,7 +97,7 @@ const ProfilePage = () => {
             </div>
 
             <div className='md:w-3/4 md:pl-4'>
-              <h2 className='text-xl font-semibold mb-4'>Your Listings</h2>
+              <h2 className='text-xl font-semibold mb-4'>Propiedades publicadas</h2>
               {!loading && properties.length === 0 && (
                 <p>You have no property listings</p>
               )}
@@ -119,7 +119,7 @@ const ProfilePage = () => {
                     <div className='mt-2'>
                       <p className='text-lg font-semibold'>{property.name}</p>
                       <p className='text-gray-600'>
-                        Address: {property.location.street}{' '}
+                        Ubicacion: {property.location.street}{' '}
                         {property.location.city} {property.location.state}
                       </p>
                     </div>

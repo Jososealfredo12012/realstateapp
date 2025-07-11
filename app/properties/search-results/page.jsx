@@ -55,7 +55,7 @@ const SearchResultsPage = () => {
               href={'/properties'}
               className='flex items-center text-blue-500 hover:underline mb-3'>
               <FaArrowAltCircleLeft className='mr-2 mb-1'></FaArrowAltCircleLeft>
-              Back to Properties
+              Ir a Propiedades
             </Link>
             <h1 className='text-2xl mb-4'>Search Results</h1>
             {properties.length === 0 ? (
