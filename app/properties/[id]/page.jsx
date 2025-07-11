@@ -12,6 +12,7 @@ import Spinner from '@/components/Spinner';
 import BookmarButton from '@/components/BookmarButton';
 import ShareButtons from '@/components/ShareButtons';
 import PropertyContactForm from '@/components/PropertyContactForm';
+import ContactInfoBox from '@/components/ContactInfoBox';
 
 const PropertyPage = () => {
   const { id } = useParams();
@@ -73,6 +74,7 @@ const PropertyPage = () => {
                   {/* <!-- Contact Form --> */}
                   <PropertyContactForm
                     property={property}></PropertyContactForm>
+                  <ContactInfoBox></ContactInfoBox>
                 </aside>
               </div>
             </div>
