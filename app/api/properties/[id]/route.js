@@ -110,6 +110,7 @@ export const PUT = async (request, { params }) => {
         weekly: formData.get('rates.weekly'),
         monthly: formData.get('rates.monthly'),
         nightly: formData.get('rates.nightly'),
+        onetime: formData.get('rates.onetime'),
       },
       seller_info: {
         name: formData.get('seller_info.name'),

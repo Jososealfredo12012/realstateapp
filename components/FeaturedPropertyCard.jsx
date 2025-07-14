@@ -19,6 +19,8 @@ const FeaturedPropertyCard = ({ property }) => {
       return `${rates.weekly.toLocaleString()}/semanal`;
     } else if (rates.nightly) {
       return `${rates.nightly.toLocaleString()}/noche`;
+    } else if (rates.onetime) {
+      return `${rates.onetime.toLocaleString()} A la venta`;
     }
   };
 

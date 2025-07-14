@@ -25,6 +25,7 @@ const PropertyAddForm = () => {
       weekly: '',
       monthly: '',
       nightly: '',
+      onetime: '',
     },
     seller_info: {
       name: '',
@@ -525,6 +526,19 @@ const PropertyAddForm = () => {
                 onChange={handleChange}
               />
             </div>
+          </div>
+          <div className='flex items-center'>
+            <label htmlFor='onetime' className='mr-2'>
+              Para comprar
+            </label>
+            <input
+              type='number'
+              id='onetime'
+              name='rates.onetime'
+              className='border rounded w-full py-2 px-3'
+              value={fields.rates.onetime}
+              onChange={handleChange}
+            />
           </div>
         </div>
 

@@ -19,6 +19,8 @@ const PropertyCard = ({ property }) => {
       return `${rates.weekly.toLocaleString()}/semanal`;
     } else if (rates.nightly) {
       return `${rates.nightly.toLocaleString()}/noche`;
+    } else if(rates.onetime){
+      return `${rates.onetime.toLocaleString()} A la venta`;
     }
   };
   return (
@@ -70,6 +72,11 @@ const PropertyCard = ({ property }) => {
           {property.rates.monthly && (
             <p>
               <FaMoneyBill className='inline mr-2'/> Mensual
+            </p>
+          )}
+          {property.rates.onetime && (
+            <p>
+              <FaMoneyBill className='inline mr-2'/> A la venta
             </p>
           )}
         </div>

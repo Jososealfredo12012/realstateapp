@@ -32,11 +32,11 @@ const PropertySchema = new Schema(
         type: String,
       },
       latitud: {
-        type: Number
+        type: Number,
       },
       longitude: {
-        type: Number
-      }
+        type: Number,
+      },
     },
     beds: {
       type: Number,
@@ -63,6 +63,9 @@ const PropertySchema = new Schema(
         type: Number,
       },
       monthly: {
+        type: Number,
+      },
+      onetime: {
         type: Number,
       },
     },
