@@ -103,7 +103,7 @@ const PropertyAddForm = () => {
       images: updatedImages,
     }));
   };
-  
+
   const { data: session } = useSession();
   const profileEmail = session?.user?.email;
 
@@ -173,7 +173,9 @@ const PropertyAddForm = () => {
         </div>
 
         <div className='mb-4 bg-blue-50 p-4'>
-          <label className='block text-gray-700 font-bold mb-2'>Ubicación</label>
+          <label className='block text-gray-700 font-bold mb-2'>
+            Ubicación
+          </label>
           <input
             type='text'
             id='street'
@@ -379,7 +381,9 @@ const PropertyAddForm = () => {
                 name='amenities'
                 value='Accesibilidad para silla de ruedas'
                 className='mr-2'
-                checked={fields.amenities.includes('Accesibilidad para silla de ruedas')}
+                checked={fields.amenities.includes(
+                  'Accesibilidad para silla de ruedas'
+                )}
                 onChange={handleAmenitiesChange}
               />
               <label htmlFor='amenity_wheelchair_accessible'>
@@ -434,7 +438,9 @@ const PropertyAddForm = () => {
                 checked={fields.amenities.includes('Aire Acondicionado')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_air_conditioning'>Aire Acondicionado</label>
+              <label htmlFor='amenity_air_conditioning'>
+                Aire Acondicionado
+              </label>
             </div>
             <div>
               <input

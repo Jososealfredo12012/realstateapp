@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import 'photoswipe/dist/photoswipe.css';
 import { ToastContainer } from 'react-toastify';
 import { GlobalProvider } from '@/context/GlobalContext';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: 'DuoHome | Find the perfect rental',
