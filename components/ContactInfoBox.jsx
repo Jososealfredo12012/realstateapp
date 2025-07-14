@@ -13,7 +13,7 @@ const ContactInfoBox = () => {
           round={true}
           className='inline mr-2'>
           </WhatsappIcon>
-        <p className='inline'>555-555-5555</p>
+        <p className='inline'>809-889-5673, 829-375-4262</p>
       </div>
       <br />
       <div>
@@ -21,7 +21,7 @@ const ContactInfoBox = () => {
           size={30}
           round={true}
           className='inline mr-2'></EmailIcon>
-        <p className='inline'>correo@correo.com</p>
+        <p className='inline'>duohomerd@gmail.com</p>
       </div>
     </div>
   );

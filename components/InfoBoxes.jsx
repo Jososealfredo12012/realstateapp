@@ -23,7 +23,9 @@ const InfoBoxes = () => {
             >
             Si te interesa vender o alquilar tu propiedad, comunicate con nosotros:
             <br></br>
-            849-248-3303
+            809-889-5643
+            <br />
+            829-375-4262
           </InfoBoxOwners>
         </div>
       </div>
