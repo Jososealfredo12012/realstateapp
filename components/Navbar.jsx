@@ -233,7 +233,7 @@ const Navbar = () => {
               className={`${
                 pathName === '/properties' && 'bg-gray-900'
               } text-white block rounded-md px-3 py-2 text-base font-medium`}>
-              Properties
+              Propiedades
             </Link>
             {isAdmin && (
               <Link
